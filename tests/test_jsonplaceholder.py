@@ -43,6 +43,8 @@ def test_create_resource():
 
 
 def test_nested_resources(nested_resources):
+    """Проверяем получение вложенного ресурса"""
+
     url = "http://jsonplaceholder.typicode.com/posts/1/{!s}".format(nested_resources)
     response = requests.get(url)
     assert response.status_code == 200
@@ -50,6 +52,8 @@ def test_nested_resources(nested_resources):
 
 @pytest.mark.parametrize("post", ["1", "2"])
 def test_delete_resources(post):
+    """Проверяем возможность удаления ресурса"""
+
     url = "http://jsonplaceholder.typicode.com/posts/{!s}".format(post)
     response = requests.delete(url)
     assert response.status_code == 200

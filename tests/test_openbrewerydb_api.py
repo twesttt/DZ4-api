@@ -4,6 +4,7 @@ import requests
 
 def test_list_by_city(by_city_param):
     """Проверяем запрос по городу, с параметризацией фикстурой"""
+
     url = "https://api.openbrewerydb.org/breweries?by_city={!s}".format(by_city_param)
     response = requests.get(url)
     assert response.status_code == 200
@@ -38,6 +39,7 @@ def test_per_page_return():
 
 def test_get_brewery():
     """Проверяем запрос пивной по ID"""
+
     url = "https://api.openbrewerydb.org/breweries/5494"
     response = requests.get(url).json()
     assert response["name"] == "MadTree Brewing"
