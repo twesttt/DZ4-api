@@ -1,12 +1,6 @@
 import pytest
 import requests
 
-def pytest_addoption(parser):
-    """Добавляем два параметра"""
-
-    parser.addoption("--status_code", action="store", default="200", help="This is status code")
-    parser.addoption("--url", action="store", default="ya.ru", help="This is url")
-
 
 @pytest.fixture
 def get_param(request):

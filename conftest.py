@@ -18,11 +18,3 @@ def pytest_addoption(parser):
     parser.addoption("--url", action="store", default="http://ya.ru", help="This is url")
 
 
-@pytest.fixture
-def get_param(request):
-    """Получаем значения параметров в словарь"""
-
-    config_param = {}
-    config_param["url"] = request.config.getoption("--url")
-    config_param["status_code"] = request.config.getoption("--status_code")
-    return config_param
